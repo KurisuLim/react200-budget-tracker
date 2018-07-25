@@ -4,7 +4,7 @@ import React from 'react';
 import {
   updateIncomeDescription,
   updateIncomeAmount,
-  addExpense
+  addIncome
 } from './incomeActions';
 
 export default class IncomeEntries extends React.Component {
@@ -43,11 +43,11 @@ export default class IncomeEntries extends React.Component {
     const { description, amount, lineItems } = this.props;
     return (
       <div className='card border-danger mb-3'>
-        <div className='card-header text-white bg-danger'>Income Entries</div>
+        <div className='card-header text-white bg-success'>Income Entries</div>
         <div className='card-body'>
           <form>
             <div className='form-group'>
-              <label htmlFor='expense-description'>Description</label>
+              <label htmlFor='income-description'>Description</label>
               <input
                 type='text'
                 className='form-control'
@@ -71,7 +71,7 @@ export default class IncomeEntries extends React.Component {
             </div>
             <button
               type='button'
-              className='btn btn-danger col-12 mb-5'
+              className='btn btn-success col-12 mb-5'
               onClick={ this.handleAddIncome }
             >+ Add Income
             </button>
