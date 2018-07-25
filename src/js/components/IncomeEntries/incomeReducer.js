@@ -4,12 +4,12 @@ const defaultState = {
   lineItems: []
 };
 
-export default function IncomeReducer(state = defaultState, action) {
+export default function ExpenseReducer(state = defaultState, action) {
   const { type, payload } = action;
 
   switch (type) {
     // Here in the case of the update description action 
-    case 'UPDATE_INCOME_DESCRIPTION': {
+    case 'UPDATE_EXPENSE_DESCRIPTION': {
       // we'll return an object
       return {
         // with all the previous state
@@ -19,14 +19,14 @@ export default function IncomeReducer(state = defaultState, action) {
       };
     }
 
-    case 'UPDATE_INCOME_AMOUNT': {
+    case 'UPDATE_EXPENSE_AMOUNT': {
       return {
         ...state,
         amount: payload.amount
       };
     }
 
-    case 'ADD_INCOMES': {
+    case 'ADD_EXPENSE': {
       const { description, amount } = action.payload;
       return {
         description: '',
